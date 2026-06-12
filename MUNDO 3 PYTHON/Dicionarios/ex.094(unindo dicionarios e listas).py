@@ -12,6 +12,7 @@ while True:
     pessoa['idade'] = int(input('Idade: '))
     soma += pessoa['idade']
     galera.append(pessoa.copy())
+    
     while True:
         resp = str(input('Quer continuar? [S/N]')).upper()[0]
         if resp in  'SN':
@@ -29,11 +30,21 @@ print(f'B) a média de idades é de {media:5.2f} anos.')
 print('C) As mulheres cadastradas foram: ', end='')
 for p in galera:
     if p['sexo'] == 'F':
-        print(f'{p["nome"]}', end=' ')
+        print(f'{p["nome"]},', end=' ')
 print()
+print('C-a) As mulheres cadastradas com mais de 35 anos foram: ', end='')
+for p in galera:
+    # Primeiro verificamos se é mulher
+    if p['sexo'] == 'F':
+        # Depois verificamos se a idade dela é maior que 35
+        if p['idade'] > 35:
+            # Imprimimos o nome com a cor vermelha (\033[31m)
+            print(f'\033[31m{p["nome"]}\033[m', end=', ')
+print() # Quebra de linha no final
+print('D) A lista de pessoas que estão acima da média')
 for p in galera:
     if p['idade'] >= media:
-        print(f'{p["nome"]}', end=' ')
+        print('    ', end=' ')
         for k, v in p.items():
             print(f'{k} = {v}; ', end=' ')
         print()
