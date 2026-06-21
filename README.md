@@ -1,1 +1,0 @@
-Bem-vindo ao repositório onde documento a minha evolução diária rumo ao mercado de desenvolvimento de software. Aqui organizo meus estudos práticos de lógica em \*\*Python\*\* e o meu progresso em digitação de código no modo \*Expert\*.
